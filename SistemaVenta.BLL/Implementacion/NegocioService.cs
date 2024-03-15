@@ -39,13 +39,14 @@ namespace SistemaVenta.BLL.Implementacion
             {
                 Negocio negocio_encontrado = await _repositorio.Obtener(n => n.IdNegocio == 1);
 
-                negocio_encontrado.NumeroDocumento = entidad.NumeroDocumento;
-                negocio_encontrado.Nombre = entidad.Nombre;
+                negocio_encontrado.RFC = entidad.RFC;
+                negocio_encontrado.RégimenFiscal = entidad.RégimenFiscal;
                 negocio_encontrado.Correo = entidad.Correo;
                 negocio_encontrado.Direccion = entidad.Direccion;
                 negocio_encontrado.Telefono = entidad.Telefono;
-                negocio_encontrado.PorcentajeImpuesto = entidad.PorcentajeImpuesto;
                 negocio_encontrado.SimboloMoneda = entidad.SimboloMoneda;
+                negocio_encontrado.CódigoPostal = entidad.CódigoPostal;
+                negocio_encontrado.RazonSocial = entidad.RazonSocial;
 
                 negocio_encontrado.NombreLogo = negocio_encontrado.NombreLogo == "" ? NombreLogo : negocio_encontrado.NombreLogo;
 

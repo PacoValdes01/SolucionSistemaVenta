@@ -39,13 +39,13 @@ namespace SistemaVenta.AplicacionWeb.Utilidades.Automapper
             #region Negocio
             CreateMap<Negocio, VMNegocio>()
                 .ForMember(destino =>
-                destino.PorcentajeImpuesto,
-                opt => opt.MapFrom(origen => Convert.ToString(origen.PorcentajeImpuesto.Value, new CultureInfo("es-MX")))
+                destino.CódigoPostal,
+                opt => opt.MapFrom(origen => Convert.ToString(origen.CódigoPostal, new CultureInfo("es-MX")))
                 );
             CreateMap<VMNegocio, Negocio>()
                 .ForMember(destino =>
-                destino.PorcentajeImpuesto,
-                opt => opt.MapFrom(origen => Convert.ToDecimal(origen.PorcentajeImpuesto.Value, new CultureInfo("es-MX")))
+                destino.CódigoPostal,
+                opt => opt.MapFrom(origen => Convert.ToDecimal(origen.CódigoPostal, new CultureInfo("es-MX")))
                 );
             #endregion
 

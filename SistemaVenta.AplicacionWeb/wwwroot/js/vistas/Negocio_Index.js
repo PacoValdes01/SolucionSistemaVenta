@@ -12,12 +12,13 @@ $(document).ready(function () {
             console.log(responseJson);
             if (responseJson.estado) {
                 const d = responseJson.objeto
-                $("#txtNumeroDocumento").val(d.numeroDocumento)
-                $("#txtRazonSocial").val(d.nombre)
+                $("#txtRFC").val(d.rfc)
+                $("#txtRégimenFiscal").val(d.régimenFiscal)
+                $("#txtCódigoPostal").val(d.códigoPostal)
+                $("#txtRazonSocial").val(d.razonSocial)
                 $("#txtCorreo").val(d.correo)
                 $("#txtDireccion").val(d.direccion)
                 $("#txtTelefono").val(d.telefono)
-                $("#txtImpuesto").val(d.porcentajeImpuesto)
                 $("#txtSimboloMoneda").val(d.simboloMoneda)
                 $("#imgLogo").attr("src", d.urlLogo)
             }
@@ -28,6 +29,7 @@ $(document).ready(function () {
 })
 
 $("#btnGuardarCambios").click(function () {
+    console.log("ENTREEE");
     const inputs = $("input.input-validar").serializeArray();
     const inputs_sin_valor = inputs.filter((item) => item.value.trim() == "")
 
@@ -40,16 +42,18 @@ $("#btnGuardarCambios").click(function () {
 
     const modelo =
     {
-        numeroDocumento: $("#txtNumeroDocumento").val(),
-        nombre: $("#txtRazonSocial").val(),
+        RFC: $("#txtRFC").val(),
+        RégimenFiscal: $("#txtRégimenFiscal").val(),
+        CódigoPostal: $("#txtCódigoPostal").val(),
+        RazonSocial: $("#txtRazonSocial").val(),
         correo: $("#txtCorreo").val(),
         direccion: $("#txtDireccion").val(),
         telefono: $("#txtTelefono").val(),
-        porcentajeImpuesto: $("#txtImpuesto").val(),
         simboloMoneda: $("#txtSimboloMoneda").val(),
 
     }
-
+    console.log(modelo)
+ 
     const inputLogo = document.getElementById("txtLogo")
     const formData = new FormData
 

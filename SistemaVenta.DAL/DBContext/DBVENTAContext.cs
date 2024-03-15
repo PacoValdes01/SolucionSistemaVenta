@@ -175,6 +175,26 @@ namespace SistemaVenta.DAL.DBContext
                     .ValueGeneratedNever()
                     .HasColumnName("idNegocio");
 
+                entity.Property(e => e.RFC)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("RFC");
+
+                entity.Property(e => e.RégimenFiscal)
+                    .HasMaxLength(75)
+                    .IsUnicode(false)
+                    .HasColumnName("RégimenFiscal");
+
+                entity.Property(e => e.CódigoPostal)
+                    .HasMaxLength(6)
+                    .IsUnicode(false)
+                    .HasColumnName("CódigoPostal");
+                
+                entity.Property(e => e.RazonSocial)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("RazonSocial");
+                
                 entity.Property(e => e.Correo)
                     .HasMaxLength(50)
                     .IsUnicode(false)
@@ -185,34 +205,22 @@ namespace SistemaVenta.DAL.DBContext
                     .IsUnicode(false)
                     .HasColumnName("direccion");
 
-                entity.Property(e => e.Nombre)
+                entity.Property(e => e.Telefono)
                     .HasMaxLength(50)
                     .IsUnicode(false)
-                    .HasColumnName("nombre");
-
-                entity.Property(e => e.NombreLogo)
-                    .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("nombreLogo");
-
-                entity.Property(e => e.NumeroDocumento)
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("numeroDocumento");
-
-                entity.Property(e => e.PorcentajeImpuesto)
-                    .HasColumnType("decimal(10, 2)")
-                    .HasColumnName("porcentajeImpuesto");
+                    .HasColumnName("telefono");
 
                 entity.Property(e => e.SimboloMoneda)
                     .HasMaxLength(5)
                     .IsUnicode(false)
                     .HasColumnName("simboloMoneda");
 
-                entity.Property(e => e.Telefono)
-                    .HasMaxLength(50)
+                
+
+                entity.Property(e => e.NombreLogo)
+                    .HasMaxLength(100)
                     .IsUnicode(false)
-                    .HasColumnName("telefono");
+                    .HasColumnName("nombreLogo");
 
                 entity.Property(e => e.UrlLogo)
                     .HasMaxLength(500)
